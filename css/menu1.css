@@ -1,0 +1,124 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*INICIO MENU HAMBURGUESA*/
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav-class{
+    background-color: #020236;
+    display: flex;
+    flex-direction: row;
+    z-index: 9999;
+
+}
+.logo{
+    padding-top: 10px;
+    height: 50px;
+    padding-right: 40px;
+    z-index: 9999;
+
+}
+.menu {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 10px 0px 12px 15px;
+    z-index: 9999;
+
+}
+.list-icon{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: unset;
+    width: 30px;
+    z-index: 9999;
+}
+.menu_hamburguesa{
+    display: none;
+    
+}
+.menu_hamburguesa:checked + .ul-links{/*desplaza la barra del menu*/
+    height: calc(90vh);
+    border-right: 2px solid rgba(255, 255, 255, 0.342);
+    z-index: 9999;    /*order: 2px solid white;*/
+}
+.ul-links {
+    width: 30%;
+    background-color:#020236;
+    position: absolute;
+    top: 62px; /*altura desde el top*/
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all .4s;
+    padding-left: 70px;
+    justify-content: space-evenly;
+    z-index: 9999;
+
+
+}
+.li-links{
+    display: flex;
+    flex-direction: unset;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    
+}
+.list-icon {
+    color: white;
+    cursor: pointer;
+
+}
+
+.link {
+    font-size: 25px;
+    z-index: 9999;
+}
+
+.li-links:hover{
+    width: 90%;
+    background-color: #ffffff85;
+    border-radius: 10px;
+    color: #000000;
+}
+
+/*fIN MENU HAMBURGUESA*/
+
+.btnwapp {
+
+    position: fixed;
+    bottom: 95px;
+    right: 20px;
+    width: 60px;
+    z-index: 9999;
+}
+
+.contenedor-logo{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+}
+.img-logos{
+    width: 65%;
+}
+.img-logos:hover {
+    transform: scale(1.1);
+}
+body{
+    background-color: #F5F6FF;
+}

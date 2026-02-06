@@ -1,0 +1,289 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #FAFBFF;
+    /* Light/clean background */
+    color: #444;
+}
+
+/* ========================
+   CONTENEDOR PRINCIPAL
+======================== */
+.container-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 120px auto 60px;
+    /* Increased top margin for fixed header */
+    padding: 0 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Título principal */
+h1 {
+    color: #020236;
+    font-size: clamp(2rem, 4vw, 3rem);
+    /* Responsive font size */
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.subtitulo {
+    color: #4A63E7;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Contenedor del contenido */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ========================
+   TARJETA DE HISTORIA
+======================== */
+.historia {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    /* Soft premium shadow */
+    text-align: left;
+    /* Better for reading large blocks */
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.historia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(74, 99, 231, 0.1);
+}
+
+.historia h2 {
+    color: #020236;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+.historia h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #4A63E7;
+    border-radius: 2px;
+}
+
+.historia p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+}
+
+/* ========================
+   LAYOUT SEPARADOR (TEXTO + LOGO)
+======================== */
+.separador {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* Center vertically */
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.separador-1 {
+    flex: 1;
+    /* Take available space */
+}
+
+.separador-2 {
+    flex: 0 0 180px;
+    /* Fixed width for logo container */
+    display: flex;
+    justify-content: center;
+}
+
+.separador-2 img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.separador-2 img:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* Negritas destacadas */
+b,
+strong {
+    color: #324CD1;
+    font-weight: 600;
+}
+
+/* ========================
+   SECCIÓN NUESTRO EQUIPO
+======================== */
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: #E0E4F5;
+    margin: 50px 0;
+}
+
+.equipo-section {
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+}
+
+.equipo-section h2 {
+    color: #020236;
+    font-size: 28px;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.equipo-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #4A63E7;
+    border-radius: 2px;
+}
+
+.equipo-intro {
+    margin: 0 auto 50px;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+}
+
+.equipo-card {
+    background: #FAFBFF;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+    border: 1px solid #EEF1FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.equipo-card:hover {
+    transform: translateY(-5px);
+    background: white;
+    box-shadow: 0 10px 30px rgba(74, 99, 231, 0.1);
+    border-color: transparent;
+}
+
+.foto-placeholder {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #EEF1FF;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.equipo-card h3 {
+    font-size: 17px;
+    color: #020236;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.equipo-card .cargo {
+    color: #4A63E7;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========================
+   RESPONSIVO
+======================== */
+@media (max-width: 768px) {
+    .container-1 {
+        width: 100%;
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    .historia {
+        padding: 25px;
+    }
+
+    .separador {
+        flex-direction: column-reverse;
+        /* Logo on top usually better, or keep text top? Text top is better for flow */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .separador-2 {
+        flex: auto;
+        margin-bottom: 10px;
+    }
+
+    .separador-2 img {
+        max-width: 120px;
+    }
+
+    .historia p {
+        text-align: left;
+        /* Easier to read on mobile than justify */
+    }
+}

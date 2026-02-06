@@ -1,0 +1,372 @@
+/* ========================
+   RESET
+======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ========================
+   SECCIÓN CON IMAGEN DE FONDO (HERO COMPACTO)
+======================== */
+.fondo-profesorado {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Much more compact */
+
+    background-image: url("../images/profesorado.png");
+    background-size: cover;
+    background-position: center 20%;
+
+    /* Focus on top-center part of image */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Offset for fixed navbar */
+}
+
+/* OVERLAY MODERNO (Más transparente para ver la imagen) */
+.fondo-profesorado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Reduced opacity: 0.85 -> 0.65 and 0.4 -> 0.25 to make image pop more */
+    background: linear-gradient(135deg, rgba(2, 2, 54, 0.85) 0%, rgba(74, 99, 231, 0.4) 100%);
+    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
+    /* Reduced blur slightly */
+    z-index: 1;
+}
+
+/* ========================
+   TEXTO CENTRADO (HIERARCHY)
+======================== */
+.texto-frontal {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hide or Reduce Logo in Hero to avoid redundancy with Navbar */
+.texto-frontal .separador img {
+    width: 80px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    display: none;
+}
+
+/* .texto-frontal h1 {
+    font-size: 14px;
+    /* Slightly smaller */
+/* text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 4px 12px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    margin-bottom: 5px;
+    display: inline-block;
+    font-weight: 500;
+} */
+*/ .texto-frontal h2 {
+    /* Reduced size: was 32-48px, now 24-38px */
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    /* Stronger shadow for contrast against lighter overlay */
+    line-height: 1.2;
+}
+
+.texto-frontal .modalidad {
+    font-size: clamp(14px, 2.5vw, 18px);
+    /* Smaller */
+    color: #FFD700;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.titulo h1 {
+    font-size: clamp(28px, 5vw, 56px);
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.texto-frontal p {
+    font-size: clamp(14px, 2vw, 16px);
+    /* Smaller */
+    line-height: 1.5;
+    max-width: 700px;
+    opacity: 1;
+    /* Full opacity for readability */
+    font-weight: 400;
+    /* Slightly bolder for readability */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ========================
+   SECCION PLAN ESTUDIO
+======================== */
+.plan-estudio {
+    padding: 60px 20px;
+    background: white;
+}
+
+.container-plan-estudio h1 {
+    font-size: 36px;
+    color: #020236;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.container-plan-estudio h1::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background: #4A63E7;
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+/* ========================
+   BUSCADOR ESTÉTICO
+======================== */
+.buscador {
+    margin: 40px auto 60px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.buscador form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.txt-form {
+    flex: 1;
+    min-width: 250px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    border: 2px solid #E0E4F5;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #FAFBFF;
+}
+
+.txt-form:focus {
+    border-color: #4A63E7;
+    box-shadow: 0px 4px 15px rgba(74, 99, 231, 0.15);
+    background: white;
+}
+
+.btnbuscar {
+    height: 50px;
+    padding: 0px 30px;
+    font-size: 16px;
+    background: #4A63E7;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(74, 99, 231, 0.2);
+}
+
+.btnbuscar:hover {
+    background: #324CD1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(74, 99, 231, 0.3);
+}
+
+/* ========================
+   RESULTADO DE MATERIA
+======================== */
+.resultado-materia {
+    font-size: 24px;
+    margin-top: 30px;
+    font-weight: 700;
+    color: #324CD1;
+    text-align: center;
+    padding: 15px;
+    background: #EEF1FF;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* ========================
+   LISTAS / TABLAS GRID
+======================== */
+.plan-estudio-anios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.plan {
+    width: 100%;
+}
+
+.plan section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* ESTILOS DE TABLA MEJORADOS */
+table {
+    flex: 1 1 300px;
+    /* Flex growth, shrink, basis */
+    max-width: 450px;
+    min-width: 300px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+    /* Remove default margin */
+}
+
+table:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 20px 40px rgba(74, 99, 231, 0.15);
+}
+
+th {
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+    border: none;
+}
+
+/* HEADER DEL AÑO (PRIMER TR) */
+table tr:first-child th {
+    background: linear-gradient(135deg, #324CD1 0%, #4A63E7 100%);
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* HEADER DE COLUMNAS (SEGUNDO TR) */
+table tr:nth-child(2) th {
+    background: #FAFBFF;
+    color: #6B7280;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 16px 24px;
+    border-bottom: 2px solid #EEF1FF;
+}
+
+td {
+    padding: 18px 24px;
+    font-size: 15px;
+    color: #444;
+    background: white;
+    border-bottom: 1px solid #F3F4F6;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* Alternate rows not needed if lines are clean, but hover effect is nice */
+tr:hover td {
+    background: #F8FAFC;
+    color: #324CD1;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Specific alignments */
+td:last-child,
+table tr:nth-child(2) th:last-child {
+    text-align: center;
+}
+
+/* ========================
+   TABLA CORRELATIVAS
+======================== */
+.lista-correlativas {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.lista-correlativas table {
+    width: 100%;
+    max-width: 500px;
+    border: none;
+    /* Removed border to match card style */
+}
+
+/* ========================
+   RESPONSIVE TWEAKS
+======================== */
+@media (max-width: 768px) {
+    .fondo-profesorado {
+        height: auto;
+        padding: 80px 0;
+    }
+
+    .plan-estudio {
+        padding: 40px 15px;
+    }
+
+    .plan-estudio-anios {
+        gap: 20px;
+    }
+
+    table {
+        max-width: 100%;
+    }
+}
